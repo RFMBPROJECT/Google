@@ -7,11 +7,24 @@ import fileupload
 import io
 import sys
 ##############Ocean###########
+import sqlite3
 from flask import Flask
+######Configure_OCEAN#########
+DATABASE = "./flaskr.db"
+SECRET_KEY = "pudim"
+USERNAME = "admin"
+PASSWORD = "admin"
+######Aplicação OCEAN#########
 app = Flask(__name__)
-@app.route('/')
-def index():
-    return "Hello word"
+app.config.from_object(__name__)
+#@app.route('/')
+#def index():
+    #leitura=open("./arqText.txt", "r")
+    #print (leitura.read())
+    #leitura.close()
+    #return (leitura)
+def connect_db():
+    return sqlite3.connect(DATABASE)
 ##############Google###########
 def _upload():
 
