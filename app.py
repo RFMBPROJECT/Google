@@ -17,12 +17,12 @@ PASSWORD = "admin"
 ######Aplicação OCEAN#########
 app = Flask(__name__)
 app.config.from_object(__name__)
-#@app.route('/')
-#def index():
+@app.route('/')
+def index():
     #leitura=open("./arqText.txt", "r")
     #print (leitura.read())
     #leitura.close()
-    #return (leitura)
+    return ("Hello word")
 def connect_db():
     return sqlite3.connect(DATABASE)
 ##############Google###########
